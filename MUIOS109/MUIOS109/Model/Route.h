@@ -13,7 +13,6 @@
 }
 
 @property (nonatomic, strong) NSString* name;
-
-- (void)beep;
+@property (nonatomic, strong) NSString* price;
 
 @end

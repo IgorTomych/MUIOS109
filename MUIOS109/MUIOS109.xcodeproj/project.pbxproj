@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		742EE7671905817E00796593 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742EE7661905817E00796593 /* Foundation.framework */; };
+		45833B1ABE094D2F9DDA2FAF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 358257BE24FA4A7C8D4B8665 /* libPods.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		742EE7671905817E00796593 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742EE7661905817E00796593 /* Foundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		742EE7691905817E00796593 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742EE7681905817E00796593 /* CoreGraphics.framework */; };
 		742EE76B1905817E00796593 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742EE76A1905817E00796593 /* UIKit.framework */; };
 		742EE7711905817E00796593 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 742EE76F1905817E00796593 /* InfoPlist.strings */; };
@@ -24,6 +25,9 @@
 		742EE79E190581C700796593 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 742EE79D190581C700796593 /* Route.m */; };
 		742EE7A119058BC100796593 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 742EE7A019058BC100796593 /* MapViewController.m */; };
 		742EE7A519058C9A00796593 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 742EE7A419058C9A00796593 /* RegisterViewController.m */; };
+		74B5A2D619097946003AD7A6 /* RoutesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B5A2D519097946003AD7A6 /* RoutesViewController.m */; };
+		74BC0DA9190EC18B007B39C6 /* CustomSideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BC0DA8190EC18B007B39C6 /* CustomSideController.m */; };
+		74BC0DAC190EC50E007B39C6 /* RoutesAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BC0DAB190EC50E007B39C6 /* RoutesAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34C2C036E6C640AF8AC6C85F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		358257BE24FA4A7C8D4B8665 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		742EE7631905817E00796593 /* MUIOS109.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MUIOS109.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		742EE7661905817E00796593 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		742EE7681905817E00796593 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +68,12 @@
 		742EE7A019058BC100796593 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = UI/MapViewController.m; sourceTree = "<group>"; };
 		742EE7A319058C9A00796593 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = UI/RegisterViewController.h; sourceTree = "<group>"; };
 		742EE7A419058C9A00796593 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = UI/RegisterViewController.m; sourceTree = "<group>"; };
+		74B5A2D419097946003AD7A6 /* RoutesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoutesViewController.h; path = UI/RoutesViewController.h; sourceTree = "<group>"; };
+		74B5A2D519097946003AD7A6 /* RoutesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoutesViewController.m; path = UI/RoutesViewController.m; sourceTree = "<group>"; };
+		74BC0DA7190EC18B007B39C6 /* CustomSideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSideController.h; path = UI/CustomSideController.h; sourceTree = "<group>"; };
+		74BC0DA8190EC18B007B39C6 /* CustomSideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSideController.m; path = UI/CustomSideController.m; sourceTree = "<group>"; };
+		74BC0DAA190EC50E007B39C6 /* RoutesAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoutesAPI.h; path = Model/RoutesAPI.h; sourceTree = "<group>"; };
+		74BC0DAB190EC50E007B39C6 /* RoutesAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoutesAPI.m; path = Model/RoutesAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,7 @@
 				742EE7691905817E00796593 /* CoreGraphics.framework in Frameworks */,
 				742EE76B1905817E00796593 /* UIKit.framework in Frameworks */,
 				742EE7671905817E00796593 /* Foundation.framework in Frameworks */,
+				45833B1ABE094D2F9DDA2FAF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +108,7 @@
 				742EE78B1905817E00796593 /* MUIOS109Tests */,
 				742EE7651905817E00796593 /* Frameworks */,
 				742EE7641905817E00796593 /* Products */,
+				34C2C036E6C640AF8AC6C85F /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +128,7 @@
 				742EE7681905817E00796593 /* CoreGraphics.framework */,
 				742EE76A1905817E00796593 /* UIKit.framework */,
 				742EE7851905817E00796593 /* XCTest.framework */,
+				358257BE24FA4A7C8D4B8665 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,6 +136,7 @@
 		742EE76C1905817E00796593 /* MUIOS109 */ = {
 			isa = PBXGroup;
 			children = (
+				74A7156B1917FCC1000FF125 /* iPad */,
 				742EE7A219058BCB00796593 /* ViewController */,
 				742EE79B1905818600796593 /* Model */,
 				742EE7751905817E00796593 /* AppDelegate.h */,
@@ -166,6 +182,8 @@
 			children = (
 				742EE79C190581C700796593 /* Route.h */,
 				742EE79D190581C700796593 /* Route.m */,
+				74BC0DAA190EC50E007B39C6 /* RoutesAPI.h */,
+				74BC0DAB190EC50E007B39C6 /* RoutesAPI.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -179,8 +197,19 @@
 				742EE7A019058BC100796593 /* MapViewController.m */,
 				742EE7A319058C9A00796593 /* RegisterViewController.h */,
 				742EE7A419058C9A00796593 /* RegisterViewController.m */,
+				74B5A2D419097946003AD7A6 /* RoutesViewController.h */,
+				74B5A2D519097946003AD7A6 /* RoutesViewController.m */,
+				74BC0DA7190EC18B007B39C6 /* CustomSideController.h */,
+				74BC0DA8190EC18B007B39C6 /* CustomSideController.m */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		74A7156B1917FCC1000FF125 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 742EE7951905817E00796593 /* Build configuration list for PBXNativeTarget "MUIOS109" */;
 			buildPhases = (
+				97A22F90C1774B78837CF6A7 /* Check Pods Manifest.lock */,
 				742EE75F1905817E00796593 /* Sources */,
 				742EE7601905817E00796593 /* Frameworks */,
 				742EE7611905817E00796593 /* Resources */,
+				E8A34576356D48E0B2E92D6C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -275,15 +306,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		97A22F90C1774B78837CF6A7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E8A34576356D48E0B2E92D6C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		742EE75F1905817E00796593 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74BC0DAC190EC50E007B39C6 /* RoutesAPI.m in Sources */,
 				742EE77D1905817E00796593 /* ViewController.m in Sources */,
+				74B5A2D619097946003AD7A6 /* RoutesViewController.m in Sources */,
 				742EE7A519058C9A00796593 /* RegisterViewController.m in Sources */,
 				742EE79E190581C700796593 /* Route.m in Sources */,
 				742EE7A119058BC100796593 /* MapViewController.m in Sources */,
+				74BC0DA9190EC18B007B39C6 /* CustomSideController.m in Sources */,
 				742EE7771905817E00796593 /* AppDelegate.m in Sources */,
 				742EE7731905817E00796593 /* main.m in Sources */,
 			);
@@ -407,26 +474,32 @@
 		};
 		742EE7961905817E00796593 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34C2C036E6C640AF8AC6C85F /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MUIOS109/MUIOS109-Prefix.pch";
 				INFOPLIST_FILE = "MUIOS109/MUIOS109-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		742EE7971905817E00796593 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34C2C036E6C640AF8AC6C85F /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MUIOS109/MUIOS109-Prefix.pch";
 				INFOPLIST_FILE = "MUIOS109/MUIOS109-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -490,6 +563,7 @@
 				742EE7971905817E00796593 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		742EE7981905817E00796593 /* Build configuration list for PBXNativeTarget "MUIOS109Tests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +572,7 @@
 				742EE79A1905817E00796593 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

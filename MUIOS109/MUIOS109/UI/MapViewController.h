@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RoutesViewController.h"
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <RoutesDelegate>
 
 @end

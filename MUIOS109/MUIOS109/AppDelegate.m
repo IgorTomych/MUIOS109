@@ -13,13 +13,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    Route* route = [[Route alloc] init];
+    UIWindow* window = application.windows[0];
+    window.tintColor = [UIColor whiteColor];
     
-    [route beep];
-    
-//    [route myHiddenMethod];
-    
-    [route performSelector:@selector(myHiddenMethod)];
+
+//    NSLog(@"starting app");
+//    
+//    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+//        NSLog(@"starting background task");
+//        sleep(15);
+//        NSLog(@"finishing background task");
+//    });
+//
+//    NSLog(@"app started");
     
     return YES;
 }
