@@ -19,39 +19,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
-    
-    UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64, 138, 80)];
-    [self.view addSubview:imageView];
-    
-    
-    dispatch_queue_t myQueue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_CONCURRENT);
-    
-    __block int multiplier = 7;
-    
-    NSLog(@"view did load");
-    dispatch_async(myQueue, ^{
-        //
-        multiplier = 10;
-        
-        NSLog(@"starting loading image");
-        NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://images.apple.com/home/images/promo_macbookair.jpg"]];
-        
-        UIImage* image = [[UIImage alloc] initWithData:data];
-        NSLog(@"image loaded");
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"image set in main queue");
-            imageView.image = image;
-        });
-    });
-    
-    NSLog(@"view did load finished");
-    
-//    dispatch_release(myQueue);
-    
-    
+    [super viewDidLoad];    
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,6 +29,6 @@
 }
 
 -(void)didRouteSelect:(Route *)selectedRoute {
-    self.headerLabel.text = selectedRoute.name;
+//    self.headerLabel.text = selectedRoute.name;
 }
 @end

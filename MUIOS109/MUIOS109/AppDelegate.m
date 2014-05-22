@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "Route.h"
+#import "Owner.h"
+#import "RoutesAPI.h"
 
 @implementation AppDelegate
 
@@ -15,17 +17,70 @@
 {
     UIWindow* window = application.windows[0];
     window.tintColor = [UIColor whiteColor];
+    application.statusBarStyle = UIStatusBarStyleLightContent;
     
-
-//    NSLog(@"starting app");
+    
+    self.managedModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    
+    NSString* documentsStorePath = [[[self applicationDocumentsDirectory] path] stringByAppendingPathComponent:@"Transport.sqlite"];
+    
+    
+    self.storeCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedModel];
+    
+    NSError* error;
+    [self.storeCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[NSURL fileURLWithPath:documentsStorePath] options:nil error:&error];
+    
+    if (error) {
+        NSLog(@"%@", error);
+    }
+    
+    self.managedContext = [[NSManagedObjectContext alloc] init];
+    [self.managedContext setPersistentStoreCoordinator:self.storeCoordinator];
+    
+//    Route* route = [NSEntityDescription insertNewObjectForEntityForName:@"Route" inManagedObjectContext:self.managedContext];
 //    
-//    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-//        NSLog(@"starting background task");
-//        sleep(15);
-//        NSLog(@"finishing background task");
-//    });
-//
-//    NSLog(@"app started");
+//    route.title = @"299E";
+//    
+//    Owner* owner = [NSEntityDescription insertNewObjectForEntityForName:@"Owner" inManagedObjectContext:self.managedContext];
+//    
+//    owner.name = @"Карусель";
+//    
+//    [owner addRoutesObject:route];
+//    
+//    [self.managedContext save:&error];
+    
+    [[RoutesAPI sharedClient] getRoutesWithSuccess:nil];
+    
+    [[RoutesAPI sharedClient] getRoutesWithSuccess:^(NSArray *routes, NSError *error) {
+        if (error) {
+            NSLog(@"%@", error);
+            return;
+        }
+        
+        NSFetchRequest* allRoutes = [[NSFetchRequest alloc] init];
+        [allRoutes setEntity:[NSEntityDescription entityForName:@"Route" inManagedObjectContext:self.managedContext]];
+        [allRoutes setIncludesPropertyValues:NO];
+        
+        NSError* fetchError;
+        
+        NSArray* routesToDelete = [self.managedContext executeFetchRequest:allRoutes error:&fetchError];
+        
+        
+        for (NSManagedObject* routeToDelete in routesToDelete) {
+            [self.managedContext deleteObject:routeToDelete];
+        }
+        
+        for (NSDictionary *routeDictionary in routes) {
+            Route* route = [NSEntityDescription insertNewObjectForEntityForName:@"Route" inManagedObjectContext:self.managedContext];
+            [route configureFromDictionary:routeDictionary];
+        }
+
+        NSError* saveError;
+        [self.managedContext save:&saveError];
+        
+    }];
+    
+    
     
     return YES;
 }
@@ -56,5 +111,14 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+#pragma mark - 
+
+- (NSURL *)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
 
 @end
